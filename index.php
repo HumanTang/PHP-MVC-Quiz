@@ -23,6 +23,7 @@
             font-weight: bold;
         }
     </style>
+    <link rel="stylesheet" href="./src/output.css">
     <!-- Include jQuery -->
     <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
 </head>
@@ -43,7 +44,8 @@
                 $.ajax({
                     url: 'quiz.json',
                     dataType: 'json',
-                    success: function(questions) {
+                    contentType: "application/json; charset=utf-8",
+                    success: function(questions) {                        
                         const form = $('<form>').attr({
                             method: 'post',
                             action: '<?php echo $_SERVER['PHP_SELF']; ?>'
